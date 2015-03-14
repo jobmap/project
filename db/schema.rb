@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20150314184448) do
     t.integer  "al_start_id"
     t.integer  "al_loc_id"
     t.string   "title"
-    t.datetime "updated_at",             null: false
+    t.datetime "al_updated_at"
     t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "locations", force: :cascade do |t|
