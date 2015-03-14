@@ -18,9 +18,10 @@
 
 /* Navbar */
 .navbar-default {
-  background-color: #1978DF;
-  border-color: #006BDF;
+  background-color: #002A59;
+  border-color: #002349;
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -31,4 +32,70 @@
 .navbar-default .navbar-nav > li > a {
   color: #FFFFFF;
   font-size: 1.1em;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #FFFFFF;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+/* Navbar toggle */
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #002A59;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+}
+
+/* Jumbotron */
+.jumbotron {
+  margin-bottom: 0px;
+  background-image: url(blurtech.jpg);
+  background-position: 60% 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: none;
+  height: 625px;
+}
+
+#overlay {
+  padding: 10px;
+  margin: auto;
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+  margin-top: 90px;
+  margin-bottom: 0;
+  text-shadow: #2D2D2D 0.0em 0.0em 0.3em;
+  color: #FFFFFF;
+}
+
+.jumbotron p, .jumbotron .p {
+  font-size: 1.7em;
+  text-shadow: #2D2D2D 0.0em 0.0em 0.3em;
+}
+
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #FFFFFF;
+  opacity: 0.9;
+  text-align: center;
+  background-color: #E07517;
+  border: 1px solid #E07517;
 }
