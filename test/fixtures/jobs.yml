@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  al_job_url: MyString
+  al_created_at: 2015-03-14 14:33:07
+  currency_code: MyString
+  description: MyString
+  equity_cliff: MyString
+  equity_max: MyString
+  equity_min: MyString
+  equity_vest: MyString
+  al_job_id: 1
+  job_type: MyString
+  remote_ok: false
+  salary_max: 1
+  salary_min: 1
+  skilltag_display_names: MyString
+  al_start_id: 1
+  al_loc_id: 1
+  title: MyString
+  updated_at: 2015-03-14 14:33:07
+
+two:
+  al_job_url: MyString
+  al_created_at: 2015-03-14 14:33:07
+  currency_code: MyString
+  description: MyString
+  equity_cliff: MyString
+  equity_max: MyString
+  equity_min: MyString
+  equity_vest: MyString
+  al_job_id: 1
+  job_type: MyString
+  remote_ok: false
+  salary_max: 1
+  salary_min: 1
+  skilltag_display_names: MyString
+  al_start_id: 1
+  al_loc_id: 1
+  title: MyString
+  updated_at: 2015-03-14 14:33:07
