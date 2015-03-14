@@ -21,6 +21,7 @@
   background-color: #1978DF;
   border-color: #006BDF;
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -31,4 +32,37 @@
 .navbar-default .navbar-nav > li > a {
   color: #FFFFFF;
   font-size: 1.1em;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #FFFFFF;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+/* Navbar toggle */
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #1978DF;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFFFFF;
+}
+
+/* Jumbotron */
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(startblur.png);
+    background-position: 60% 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    height: 625px;
 }
