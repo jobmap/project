@@ -1,7 +1,7 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
-      t.string :al_job_url
+      t.string :al_url
       t.datetime :al_created_at
       t.string :currency_code
       t.string :description
