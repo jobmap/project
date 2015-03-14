@@ -18,7 +18,7 @@ class CreateJobs < ActiveRecord::Migration
       t.integer :al_start_id
       t.integer :al_loc_id
       t.string :title
-      t.datetime :updated_at
+      t.datetime :al_updated_at
 
       t.timestamps null: false
     end
