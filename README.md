@@ -6,4 +6,6 @@ JobFinder (name subject to change)
 This project was created by [J. Spencer Hopkins](https://github.com/jspencerhopkins) and
 [Peter Ortiz](https://github.com/Peterortiz82).
 
+See the app live [JobFinder](https://fathomless-refuge-7945.herokuapp.com)
+
 
