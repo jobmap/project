@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  al_url: MyString
+  community_profile: false
+  url: MyString
+  al_created_at: 2015-03-14 14:39:04
+  follower_count: 1
+  hidden: false
+  high_concept: MyString
+  al_start_id: 1
+  logo_url: MyString
+  name: MyString
+  prod_desc: MyString
+  quality: 1
+  thumb_url: MyString
+  al_updated_at: 2015-03-14 14:39:04
+
+two:
+  al_url: MyString
+  community_profile: false
+  url: MyString
+  al_created_at: 2015-03-14 14:39:04
+  follower_count: 1
+  hidden: false
+  high_concept: MyString
+  al_start_id: 1
+  logo_url: MyString
+  name: MyString
+  prod_desc: MyString
+  quality: 1
+  thumb_url: MyString
+  al_updated_at: 2015-03-14 14:39:04
