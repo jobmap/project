@@ -15,3 +15,20 @@
  */
 
 @import "bootstrap";
+
+/* Navbar */
+.navbar-default {
+  background-color: #1978DF;
+  border-color: #006BDF;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 1.8em;
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+  font-size: 1.1em;
+}
