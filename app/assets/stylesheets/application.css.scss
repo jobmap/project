@@ -60,11 +60,12 @@
   margin-bottom: 0px;
   background: url("/assets/blurtech.jpg");
   background-position: 60% 60%;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   color: white;
   text-shadow: none;
-  height: 625px;
+  background-size: cover;
+  height: 650px;
 }
 
 #overlay {
@@ -98,4 +99,35 @@
   text-align: center;
   background-color: #E07517;
   border: 1px solid #E07517;
+}
+
+/* How it works - section */
+.homepage {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.homepage h2, .homepage h3 {
+  color: #002A59;
+  font-family: 'Arvo', courier, serif;
+}
+
+.homepage h2 {
+  font-size: 2.2em;
+}
+
+.homepage h3 {
+  font-size: 2em;
+}
+
+.homepage p {
+  font-size: 21px;
+  font-weight: 300
+}
+
+.homepage hr {
+  border-top: 1px solid#002A59;
+  width: 170px;
+  margin-top: 15px;
 }
