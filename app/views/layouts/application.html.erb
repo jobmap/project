@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jobmap</title>
+  <title>JobFinder</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,10 +14,5 @@
 <%= yield %>
 
 </body>
-
-  <footer class="footer">
-    <div class="container-fluid">
-      <p style="text-align:center;">JobFinder &copy <%= Time.new.year %></p>
-    </div>
-  </footer>
+  <%= render 'layouts/footer' %>
 </html>
