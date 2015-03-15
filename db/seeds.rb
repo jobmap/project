@@ -14,7 +14,7 @@ angel_jobs.each do |job|
   Job.create( al_url:         job.angellist_url,
               al_created_at:  job.created_at,
               currency_code:  job.currency_code,
-              role_name:      job.tags[role_tag].display_name
+              role_name:      job.tags[role_tag].display_name,
               description:    job.description,
               equity_cliff:   job.equity_cliff,
               equity_max:     job.equity_max,
@@ -52,7 +52,7 @@ angel_jobs.each do |job|
                       display_name: job.tags[loc_tag].display_name,
                       al_loc_id:    job.tags[loc_tag].id,
                       name:         job.tags[loc_tag].name
-                    )
+                      )
 
 
 end
