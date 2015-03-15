@@ -26,6 +26,7 @@ angel_jobs.each do |job|
               salary_min:     job.salary_min,
               al_start_id:    job.startup.id,
               al_loc_id:      job.tags[loc_tag].id,
+              location:       job.tags[loc_tag].name,
               title:          job.title,
               al_updated_at:  job.updated_at
               )
