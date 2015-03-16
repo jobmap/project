@@ -6,7 +6,7 @@ class JobsController < ApplicationController
       @hash = Gmaps4rails.build_markers(@jobs) do |job, marker|
       marker.lat job.latitude
       marker.lng job.longitude
-      marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{job.address}"+"'>Get Directions With Google Maps</a>"
+      marker.infowindow job.title
     end
   end
 
@@ -33,15 +33,3 @@ class JobsController < ApplicationController
     end
 
 end
-
-=begin
-  
-@jobs = Job.all
-    @hash = Gmaps4rails.build_markers(@jobs) do |job, marker|
-    marker.lat job.latitude
-    marker.lng job.longitude
-    marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{job.address}"+"'>Get Directions With Google Maps</a>"
-  
-end
-
-=end
