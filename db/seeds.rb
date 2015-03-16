@@ -37,7 +37,6 @@ while page_num <= last_page
                     salary_min:     job.salary_min,
                     al_start_id:    job.startup.id,
                     al_loc_id:      job.tags[loc_tag].id,
-                    location:       job.tags[loc_tag].name,
                     title:          job.title,
                     al_updated_at:  job.updated_at
                     )
@@ -56,7 +55,8 @@ while page_num <= last_page
                         prod_desc:          job.startup.product_desc,
                         quality:            job.startup.quality,
                         thumb_url:          job.startup.thumb_url,
-                        al_updated_at:      job.startup.updated_at
+                        al_updated_at:      job.startup.updated_at,
+                        al_loc_id:          job.tags[loc_tag].id
                         )
 
       Location.find_by_al_loc_id(job.tags[loc_tag].id) ||
