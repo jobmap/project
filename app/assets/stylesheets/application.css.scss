@@ -16,6 +16,15 @@
 
 @import "bootstrap";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
 /* Navbar */
 .navbar-default {
   background-color: #002A59;
@@ -154,11 +163,12 @@
 }
 
 /* footer */
-
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
 }
 
 .footer .container-fluid {
