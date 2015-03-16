@@ -8,10 +8,4 @@ class JobsController < ApplicationController
     end
   end
 
-  private
-
-    def job_params
-      params.require(:job).permit(:latitude, :longitude, :address)
-    end
-
 end
