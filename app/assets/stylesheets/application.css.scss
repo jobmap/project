@@ -137,6 +137,13 @@
 }
 
 /* footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%
+}
+
 .footer .container-fluid {
   background-color: #002A59;
   height: 150px;
