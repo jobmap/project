@@ -16,6 +16,15 @@
 
 @import "bootstrap";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
 /* Navbar */
 .navbar-default {
   background-color: #002A59;
@@ -136,7 +145,32 @@
   margin-top: 15px;
 }
 
+/* Google maps-map */
+
+.map_container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.map_container .map{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
 /* footer */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+
 .footer .container-fluid {
   background-color: #002A59;
   height: 150px;
