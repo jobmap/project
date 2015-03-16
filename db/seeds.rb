@@ -63,7 +63,7 @@ while page_num <= last_page
         Location.create(  al_url:       job.tags[loc_tag].angellist_url,
                           display_name: job.tags[loc_tag].display_name,
                           al_loc_id:    job.tags[loc_tag].id,
-                          name:         job.tags[loc_tag].name
+                          address:      job.tags[loc_tag].name
                           )
     
     end
