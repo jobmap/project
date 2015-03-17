@@ -14,18 +14,16 @@ while page_num <= last_page
 
   angel_jobs.jobs.each do |job|
 
-    # Number of tags in tag object
-    num_tags = job.tags.length
-    loc_tag = num_tags - 2
-    role_tag = num_tags - 1
+    loc_obj = job.tags.find{ |n| n.tag_type == "LocationTag"}
+    role_obj = job.tags.find{ |n| n.tag_type == "RoleTag"}
 
-    if job.tags[loc_tag].tag_type == "LocationTag"
+    unless loc_obj.nil?
 
       Job.find_by_al_job_id(job.startup.id) ||
         Job.create( al_url:         job.angellist_url,
                     al_created_at:  job.created_at,
                     currency_code:  job.currency_code,
-                    role_name:      job.tags[role_tag].display_name,
+                    role_name:      role_obj.display_name,
                     description:    job.description,
                     equity_cliff:   job.equity_cliff,
                     equity_max:     job.equity_max,
@@ -36,7 +34,7 @@ while page_num <= last_page
                     salary_max:     job.salary_max,
                     salary_min:     job.salary_min,
                     al_start_id:    job.startup.id,
-                    al_loc_id:      job.tags[loc_tag].id,
+                    al_loc_id:      loc_obj.id,
                     title:          job.title,
                     al_updated_at:  job.updated_at
                     )
@@ -56,16 +54,18 @@ while page_num <= last_page
                         quality:            job.startup.quality,
                         thumb_url:          job.startup.thumb_url,
                         al_updated_at:      job.startup.updated_at,
-                        al_loc_id:          job.tags[loc_tag].id
+                        al_loc_id:          loc_obj.id
                         )
 
-      Location.find_by_al_loc_id(job.tags[loc_tag].id) ||
-        Location.create(  al_url:       job.tags[loc_tag].angellist_url,
-                          display_name: job.tags[loc_tag].display_name,
-                          al_loc_id:    job.tags[loc_tag].id,
-                          address:      job.tags[loc_tag].name
+      Location.find_by_al_loc_id(loc_obj.id) ||
+        Location.create(  al_url:       loc_obj.angellist_url,
+                          display_name: loc_obj.display_name,
+                          al_loc_id:    loc_obj.id,
+                          address:      loc_obj.name
                           )
     
+    sleep 1
+
     end
 
   end
