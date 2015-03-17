@@ -35,10 +35,6 @@ ActiveRecord::Schema.define(version: 20150316203128) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "role_name"
-    t.string   "skills_list"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "address"
   end
 
   create_table "locations", force: :cascade do |t|
