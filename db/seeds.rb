@@ -66,6 +66,8 @@ while page_num <= last_page
                           address:      job.tags[loc_tag].name
                           )
     
+    sleep 5
+
     end
 
   end
