@@ -6,6 +6,13 @@ class Location < ActiveRecord::Base
   has_many :startups, foreign_key: 'al_loc_id'
 
   geocoded_by :address
-  after_validation :geocode 
+  after_validation :geocode
+
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      obj.zipcode = geo.postal_code
+    end
+  end
+  after_validation :reverse_geocode
 
 end
