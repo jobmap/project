@@ -1,17 +1,17 @@
 class JobsController < ApplicationController
 
   def show
-    @jobs = Job.all
-    @location = Location.where(address: params[:search])
-    @hash = Gmaps4rails.build_markers(@location) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
+    @locations = Location.near(params[:search], 25)
+    @hash = Gmaps4rails.build_markers(@locations) do |locations, marker|
+      marker.lat locations.latitude
+      marker.lng locations.longitude
     end
 
-    if @location.empty?
+    if @locations.empty?
       redirect_to "/"
-    elsif @location.nil?
+    elsif @locations.nil?
       redirect_to "/"
     end
   end
 end
+
