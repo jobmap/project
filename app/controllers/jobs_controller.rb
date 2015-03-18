@@ -7,10 +7,10 @@ class JobsController < ApplicationController
      marker.lng locations.longitude
    end
 
-   if @locations.empty?
-     redirect_to "/"
-   elsif @locations.nil?
-     redirect_to "/"
-   end
- end
+ #   if @locations.empty?
+ #     redirect_to "/"
+ #   elsif @locations.nil?
+ #     redirect_to "/"
+ #   end
+  end
 end

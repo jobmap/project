@@ -98,16 +98,11 @@ body {
   text-shadow: #2D2D2D 0.0em 0.0em 0.3em;
 }
 
-.input-group-addon {
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1;
-  color: #FFFFFF;
-  opacity: 0.9;
-  text-align: center;
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+  margin-left: -1px;
   background-color: #E07517;
   border: 1px solid #E07517;
+  color: #FFFFFF;
 }
 
 /* How it works - section */
