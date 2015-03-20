@@ -17,12 +17,21 @@
 @import "bootstrap";
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    margin: 0 0 100px; /* bottom = footer height */
+  margin: 0 0 100px; /* bottom = footer height */
+  background: #F9F9F9;
+}
+
+ul {
+  list-style-type: none;
+}
+
+hr {
+  border-top: 1px solid #E4E4E4;
 }
 
 /* Navbar */
@@ -82,7 +91,7 @@ body {
   margin: auto;
   margin-top: 30px;
   width: 100%;
-  height: 100%;
+  height: 80%;
   border-radius: 10px;
 }
 
@@ -106,6 +115,11 @@ body {
 }
 
 /* How it works - section */
+
+#about {
+  background-color: #FFFFFF;
+}
+
 #how-it-works {
   background-color: rgb(244, 244, 244);
 }
@@ -118,7 +132,7 @@ body {
 
 .homepage h2, .homepage h3 {
   color: #002A59;
-  font-family: 'Arvo', courier, serif;
+  font-family: 'Roboto',Arial,sans-serif
 }
 
 .homepage h2 {
@@ -142,20 +156,92 @@ body {
 
 /* Google maps-map */
 
-.map_container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+.panel-body {
+  padding: 4px;
+  margin: 0px;
+  margin-top: 32px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
 }
-.map_container .map{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
+
+#map{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+  border-radius: 6px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
+
+.pull-right .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.pull-right .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+  margin-left: -1px;
+  background-color: #E07517;
+  border: 1px solid #E07517;
+  color: #FFFFFF;
+  border-top-right-radius: 0;
+}
+
+/* Startup Listing */
+
+.row-pull-left {
+  display: inline-block;
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.startup-list {
+  display: inline-block;
+  margin-bottom: 0px;
+  padding-left: 10px;
+}
+
+.startup-list li {
+  font-size: 1.2em;
+  font-family: 'Roboto',Arial,sans-serif
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 40px;
+  margin-left: 3px;
+  color: #4A4A4B;
+  font-family: 'Roboto',Arial,sans-serif
+}
+
+.h2-li {
+  font-size: 2.0em;
+  margin-bottom: 7px;
+  margin-top: 0px;
+  color: #4A4A4B;
+  font-family: 'Roboto',Arial,sans-serif
+}
+
+.title-h2 {
+  color: #BCC6D2; 
+  font-size: 0.6em;
+}
+
+.thumbnail {
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: -2px;
+  line-height: 1.42857143;
+  background-color: #002A59;
+  border: 1px solid #FFFFFF;
+  border-radius: 0px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+
 
 /* footer */
 footer {
