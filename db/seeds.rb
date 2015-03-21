@@ -3,6 +3,7 @@
 Job.delete_all
 Startup.delete_all
 Location.delete_all
+Zillow.delete_all
 
 last_page = AngellistApi.get_jobs(options={page: 100000}).last_page
 
@@ -39,6 +40,15 @@ while page_num <= last_page
                     al_updated_at:  job.updated_at
                     )
 
+
+      Location.find_by_al_loc_id(loc_obj.id) ||
+        Location.create(  al_url:       loc_obj.angellist_url,
+                          display_name: loc_obj.display_name,
+                          al_loc_id:    loc_obj.id,
+                          address:      loc_obj.name
+                          )
+
+
       Startup.find_by_al_start_id(job.startup.id) ||
         Startup.create( al_url:             job.startup.angellist_url,
                         community_profile:  job.startup.community_profile,
@@ -57,19 +67,40 @@ while page_num <= last_page
                         al_loc_id:          loc_obj.id
                         )
 
-      Location.find_by_al_loc_id(loc_obj.id) ||
-        Location.create(  al_url:       loc_obj.angellist_url,
-                          display_name: loc_obj.display_name,
-                          al_loc_id:    loc_obj.id,
-                          address:      loc_obj.name
-                          )
-    
-    sleep 1
+    sleep 2
 
     end
 
   end
 
   page_num += 1
+
+end
+
+Location.find_each do |location|
+
+  if location.city != nil && location.state != nil
+
+    z_data = Rubillow::Neighborhood.demographics({ state: location.state, city: location.city })
+
+    
+    if z_data.success?
+      unless z_data.characteristics['Education'].nil? || z_data.characteristics['People & Culture'].nil? || z_data.characteristics['Transportation'].nil?
+        Zillow.create( al_loc_id:            location.al_loc_id,
+                        med_house_income:     z_data.metrics['People Data']['Median Household Income'][:city].value.to_i,
+                        med_nat_house_income: z_data.metrics['People Data']['Median Household Income'][:nation].value.to_i,
+                        zillow_HVI:           z_data.affordability_data['Zillow Home Value Index'][:city].value.to_i,
+                        zillow_nat_HVI:       z_data.affordability_data['Zillow Home Value Index'][:nation].value.to_i,
+                        avg_commute_time:     z_data.metrics['People Data']['Average Commute Time (Minutes)'][:city].value.to_f,
+                        avg_nat_commute_time: z_data.metrics['People Data']['Average Commute Time (Minutes)'][:nation].value.to_f,
+                        education:            z_data.characteristics['Education'].join(', '),
+                        people_culture:       z_data.characteristics['People & Culture'].join(', '),
+                        transportation:       z_data.characteristics['Transportation'].join(', ')
+                      ) 
+      end
+    end
+  end 
+  
+  sleep 2
 
 end
