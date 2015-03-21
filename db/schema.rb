@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316232427) do
+ActiveRecord::Schema.define(version: 20150321143046) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "al_url"
@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(version: 20150316232427) do
     t.datetime "updated_at",   null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "state"
   end
 
   create_table "startups", force: :cascade do |t|
@@ -67,6 +70,21 @@ ActiveRecord::Schema.define(version: 20150316232427) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "al_loc_id"
+  end
+
+  create_table "zillows", force: :cascade do |t|
+    t.integer  "al_loc_id"
+    t.integer  "med_house_income"
+    t.integer  "med_nat_house_income"
+    t.integer  "zillow_HVI"
+    t.integer  "zillow_nat_HVI"
+    t.float    "avg_commute_time"
+    t.float    "avg_nat_commute_time"
+    t.text     "education"
+    t.text     "people_culture"
+    t.text     "transportation"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end

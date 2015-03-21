@@ -12,6 +12,9 @@ gem 'angellist_api'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'rubillow'
+gem 'rest-client'
+
 
 group :production do
   gem 'pg'
