@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320170907) do
+ActiveRecord::Schema.define(version: 20150321143046) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "al_url"
@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 20150320170907) do
     t.integer  "zillow_nat_HVI"
     t.float    "avg_commute_time"
     t.float    "avg_nat_commute_time"
-    t.string   "education"
-    t.string   "people_culture"
-    t.string   "transportation"
+    t.text     "education"
+    t.text     "people_culture"
+    t.text     "transportation"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
