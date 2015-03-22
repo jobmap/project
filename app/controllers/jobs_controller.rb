@@ -9,7 +9,7 @@ class JobsController < ApplicationController
       end
 
     @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6)
-
+    @zillow = @location.zillow
    # if @location.empty?
    #   redirect_to "/"
    # elsif @location.nil?
