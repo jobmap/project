@@ -1,3 +1,3 @@
 
-zillow.key  = ENV["zillow_key"]
-angellist.key = ENV["angellist_key"]
+Zillow.key  = ENV["zillow_key"]
+Angellist.key = ENV["angellist_key"]
