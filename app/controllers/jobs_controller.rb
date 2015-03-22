@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def show
-    @location = Location.find_by(address: params[:search])
+    @location = Location.find_by(address: params[:search].downcase)
     @locations = Location.near(params[:search], 5)
       @hash = Gmaps4rails.build_markers(@locations) do |locations, marker|
         marker.lat locations.latitude
