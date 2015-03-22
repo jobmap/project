@@ -33,6 +33,8 @@
             <li><strong>Job title:</strong> <%= job.title.truncate_words(10) %></li>
             <% if job.salary_max && job.salary_min != nil && job.salary_max && job.salary_min != 0 %>
               <li><strong>Salary: </strong>$<%= job.salary_min %> - $<%= job.salary_max %></li>
+            <% else %>
+              <li><strong>Salary: </strong>N/A<li>
             <% end %>
             <li><%= link_to "Details", job.al_url %> | <%= link_to "Website", job.startup.url, target: "_blank" %></li>
           </ul>
