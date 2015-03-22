@@ -25,8 +25,8 @@
     <h1>Startup Jobs in <%= @location.display_name %></h1>
   </div>
   <div class="col-md-8">
-    <% @locations.each do |location| %>
-      <% location.jobs.each do |job| %>
+    
+      <% @jobs.each do |job| %>
           <%= link_to image_tag(job.startup.thumb_url), "#{job.startup.url}", target: "_blank", class: "thumbnail" %>
           <ul class="startup-list">
             <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type %>)</span></h2></li>
@@ -38,9 +38,12 @@
           </ul>
         <hr>
       <% end %>
-    </div>
-  <% end %>
+
+    <%= will_paginate @jobs %>
+
+  </div>
 </div>
+
 
 
 
