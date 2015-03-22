@@ -160,6 +160,7 @@ hr {
   padding: 4px;
   margin: 0px;
   margin-top: 32px;
+  margin-bottom: 20px;
   background-color: #FFFFFF;
   border-radius: 6px;
 }
@@ -190,7 +191,11 @@ hr {
 
 /* Startup Listing */
 
-.row-pull-left {
+.col-md-8{
+  padding-left: 0px;
+}
+
+.row {
   display: inline-block;
   padding-left: 0px;
   margin-left: 0px;
@@ -208,7 +213,7 @@ hr {
   font-family: 'Roboto',Arial,sans-serif
 }
 
-h1 {
+.h1-title {
   font-size: 4em;
   margin-bottom: 40px;
   margin-left: 3px;
@@ -217,7 +222,7 @@ h1 {
 }
 
 .h2-li {
-  font-size: 2.0em;
+  font-size: 1.6em;
   margin-bottom: 7px;
   margin-top: 0px;
   color: #4A4A4B;
@@ -225,7 +230,7 @@ h1 {
 }
 
 .title-h2 {
-  color: #BCC6D2; 
+  color: #7B8189; 
   font-size: 0.6em;
 }
 
@@ -234,8 +239,8 @@ h1 {
   padding: 4px;
   margin-bottom: -2px;
   line-height: 1.42857143;
-  background-color: #002A59;
-  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+  border: 2px solid #E4E4E4;
   border-radius: 0px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
@@ -261,3 +266,41 @@ footer {
   color: #FFFFFF;
   padding-top: 110px;
 }
+
+/* Media queries */
+
+@media (max-width: 991px) {
+
+  .h1-title {
+  font-size: 3em;
+  text-align: center;
+}
+
+
+}
+@media (max-width: 767px) {
+  
+  .thumbnail {
+  display: none;
+}
+
+#map {
+  height: 250px;
+}
+
+.h1-title {
+  font-size: 3em;
+  text-align: center;
+}
+
+.h2-li {
+  font-size: 1.5em;
+  margin-bottom: 2px;
+}
+
+.col-md-8{
+  padding-left: 0px;
+}
+
+}
+
