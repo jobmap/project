@@ -29,7 +29,7 @@
       <% @jobs.each do |job| %>
           <%= link_to image_tag(job.startup.thumb_url), "#{job.startup.url}", target: "_blank", class: "thumbnail" %>
           <ul class="startup-list">
-            <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type %>)</span></h2></li>
+            <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type.capitalize %>)</span></h2></li>
             <li><strong>Job title:</strong> <%= job.title.truncate_words(10) %></li>
             <% if job.salary_max && job.salary_min != nil && job.salary_max && job.salary_min != 0 %>
               <li><strong>Salary: </strong>$<%= job.salary_min %> - $<%= job.salary_max %></li>
