@@ -32,7 +32,7 @@
             <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type %>)</span></h2></li>
             <li><strong>Job title:</strong> <%= job.title.truncate_words(10) %></li>
             <% if job.salary_max && job.salary_min != nil && job.salary_max && job.salary_min != 0 %>
-              <li><strong>Salary: </strong>$<%= job.salary_min %> - $<%= job.salary_max %></li>
+              <li><strong>Salary: </strong>$<%= number_with_delimiter(job.salary_min, delimiter: ',') %> - $<%= number_with_delimiter(job.salary_max, delimiter: ',') %></li>
             <% else %>
               <li><strong>Salary: </strong>N/A<li>
             <% end %>
