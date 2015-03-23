@@ -28,35 +28,41 @@
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <%= @location.display_name %> Quick Facts
+           Quick Facts 
           </a>
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <ul class="list-group">
-          <li><strong>Medium Household income:</strong> $<%= @zillow.med_house_income %></li> 
-          <li><strong>Home Value Index:</strong> $<%= @zillow.zillow_HVI %></li>
-          <li><strong>Average Commute Time:</strong> <%= @zillow.avg_commute_time.round %>min
+          <li><strong>Medium Household income:</strong> $<%= number_with_delimiter(@zillow.med_house_income, delimiter: ',') %></li> 
+          <li class="nat-avg" style="
+    font-size: .9em;">(National average $<%= number_with_delimiter(@zillow.med_nat_house_income, delimiter: ',') %>)</li>
+          <li><strong>Home Value Index:</strong> $<%= number_with_delimiter(@zillow.zillow_HVI, delimiter: ',') %></li>
+          <li class="nat-avg" style="
+    font-size: .9em;">(National average $<%= number_with_delimiter(@zillow.zillow_nat_HVI, delimiter: ',') %>)</li>
+          <li><strong>Average Commute Time:</strong> About <%= @zillow.avg_commute_time.round %> minutes</li>
+          <li class="nat-avg" style="
+    font-size: .9em;">(National average About <%= @zillow.avg_nat_commute_time.round %> minutes)</li>
         </ul>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <%= @location.display_name %> Culter Facts
-          </a>
-        </h4>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                 Culter Facts 
+                </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <ul class="list-group">
+              <li class="culter"><strong>Education:</strong> <%= @zillow.education %></li>
+              <li class="culter"><strong>People & Culture:</strong> <%= @zillow.people_culture %></li>
+              <li class="culter"><strong>Transportation:</strong> <%= @zillow.transportation %>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <ul class="list-group">
-          <li><strong>Education:</strong> <%= @zillow.education %></li>
-          <li><strong>People & Culture:</strong> <%= @zillow.people_culture %></li>
-          <li><strong>Transportation:</strong> <%= @zillow.transportation %>
-        </ul>
-      </div>
-    </div>
-    </div>
     </div>
   </div>
 
@@ -69,7 +75,7 @@
       <% @jobs.each do |job| %>
           <%= link_to image_tag(job.startup.thumb_url), "#{job.startup.url}", target: "_blank", class: "thumbnail" %>
           <ul class="startup-list">
-            <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type.capitalize %>)</span></h2></li>
+            <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type.titleize %>)</span></h2></li>
             <li><strong>Job title:</strong> <%= job.title.truncate_words(10) %></li>
             <% if job.salary_max && job.salary_min != nil && job.salary_max && job.salary_min != 0 %>
               <li><strong>Salary: </strong>$<%= job.salary_min %> - $<%= job.salary_max %></li>
