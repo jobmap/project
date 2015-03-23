@@ -16,6 +16,5 @@
 !/log/.keep
 /tmp
 
-/config/initializers/keys.rb
 # Ignore application configuration
 /config/application.yml
