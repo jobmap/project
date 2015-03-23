@@ -7,7 +7,7 @@
     <div id="map" class="map_container">
       <script>
       handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {maxZoom: 14}, internal: {id: 'map'}}, function(){
+      handler.buildMap({ provider: {maxZoom: 10}, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(<%=raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
@@ -50,7 +50,7 @@
           <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                 Culter Facts 
+                 Culture Facts 
                 </a>
             </h4>
           </div>
