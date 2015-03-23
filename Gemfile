@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'rubillow'
 gem 'rest-client'
 gem 'will_paginate'
+gem 'figaro'
 
 
 group :production do
