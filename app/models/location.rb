@@ -6,6 +6,8 @@ class Location < ActiveRecord::Base
   has_many :startups, foreign_key: 'al_loc_id'
   has_one :zillow, foreign_key: 'al_loc_id'
 
+  validates :al_loc_id, uniqueness: true
+
   geocoded_by :address
   
   reverse_geocoded_by :latitude, :longitude do |obj,results|

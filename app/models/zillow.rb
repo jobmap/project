@@ -4,4 +4,6 @@ class Zillow < ActiveRecord::Base
 
   belongs_to :location, foreign_key: 'al_loc_id'
 
+  validates :al_loc_id, uniqueness: true
+
 end

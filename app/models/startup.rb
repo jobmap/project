@@ -5,4 +5,6 @@ class Startup < ActiveRecord::Base
   belongs_to :location, foreign_key: 'al_loc_id'
   has_many :jobs, foreign_key: 'al_start_id'
 
+  validates :al_start_id, uniqueness: true
+
 end
