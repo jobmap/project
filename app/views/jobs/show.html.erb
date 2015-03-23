@@ -2,88 +2,14 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 <div class="container">
   <div class="panel-body col-md-4 pull-right">
-
-    <!-- Google maps -->
-    <div id="map" class="map_container">
-      <script>
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {maxZoom: 10}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-      </script>
-    </div>
-    <%= form_tag jobs_path, :method => :get do %>
-    <div class="pull-right">
-      <div class="input-group input-group-md">
-        <%= text_field_tag :search, params[:search], placeholder: "search by city", class: "form-control" %>
-          <span class="input-group-btn"><%= submit_tag "Change location", name: nil, class: "btn btn-default" %></span>
-        <% end %>
-      </div>
-
-  <!-- Quick facts -->
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-           Quick Facts 
-          </a>
-        </h4>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <ul class="list-group">
-          <li><strong>Medium Household income:</strong> $<%= number_with_delimiter(@zillow.med_house_income, delimiter: ',') %></li> 
-          <li class="nat-avg" style="
-    font-size: .9em;">(National average $<%= number_with_delimiter(@zillow.med_nat_house_income, delimiter: ',') %>)</li>
-          <li><strong>Home Value Index:</strong> $<%= number_with_delimiter(@zillow.zillow_HVI, delimiter: ',') %></li>
-          <li class="nat-avg" style="
-    font-size: .9em;">(National average $<%= number_with_delimiter(@zillow.zillow_nat_HVI, delimiter: ',') %>)</li>
-          <li><strong>Average Commute Time:</strong> About <%= @zillow.avg_commute_time.round %> minutes</li>
-          <li class="nat-avg" style="
-    font-size: .9em;">(National average About <%= @zillow.avg_nat_commute_time.round %> minutes)</li>
-        </ul>
-      </div>
-    </div>
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                 Culture Facts 
-                </a>
-            </h4>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <ul class="list-group">
-              <li class="culter"><strong>Education:</strong> <%= @zillow.education %></li>
-              <li class="culter"><strong>People & Culture:</strong> <%= @zillow.people_culture %></li>
-              <li class="culter"><strong>Transportation:</strong> <%= @zillow.transportation %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'maps' %>
+    <%= render 'zillow_data' %>
   </div>
-
   <div class="h1-title">
     <h1>Startup Jobs in <%= @location.display_name %></h1>
   </div>
   <div class="col-md-8">
-    
-  <!-- Job listings -->
-      <% @jobs.each do |job| %>
-          <%= link_to image_tag(job.startup.thumb_url), "#{job.startup.url}", target: "_blank", class: "thumbnail" %>
-          <ul class="startup-list">
-            <li><h2 class="h2-li"><%= job.startup.name %> <span CLASS="title-h2">(<%= job.job_type.titleize %>)</span></h2></li>
-            <li><strong>Job title:</strong> <%= job.title.truncate_words(10) %></li>
-            <% if job.salary_max && job.salary_min != nil && job.salary_max && job.salary_min != 0 %>
-              <li><strong>Salary: </strong>$<%= job.salary_min %> - $<%= job.salary_max %></li>
-            <% end %>
-            <li><%= link_to "Details", job.al_url %> | <%= link_to "Website", job.startup.url, target: "_blank" %></li>
-          </ul>
-        <hr>
-      <% end %>
+    <%= render 'jobs' %>
 
     <%= will_paginate @jobs %>
 
