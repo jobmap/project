@@ -36,7 +36,10 @@ hr {
 
 ul li a {
   color: #E07517;
-  
+}
+
+ul li a:visited {
+  color: #E07517;
 }
 
 ul li a:hover {
@@ -198,6 +201,36 @@ ul li a:hover {
   border: 1px solid #E07517;
   color: #FFFFFF;
   border-top-right-radius: 0;
+}
+
+.panel-title > a:hover, a:visited, a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.panel-group {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.nat-avg {
+  font-style: italic;
+  font-size: 1em;
+  padding-bottom: 6px;
+}
+
+.culter {
+  padding-bottom: 6px;
+}
+
+.panel-group .panel-heading + .panel-collapse > .list-group li {
+  font-weight: 300;
+  font-size: 1.1em;
 }
 
 /* Startup Listing */
