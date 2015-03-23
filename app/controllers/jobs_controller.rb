@@ -10,9 +10,12 @@ class JobsController < ApplicationController
 
     @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6)
     @zillow = @location.zillow
+   
    # if @location.empty?
+   #   flash[:notice] = "No matches found. Please try again."
    #   redirect_to "/"
    # elsif @location.nil?
+   #   flash[:notice] = "No matches found. Please try again." 
    #   redirect_to "/"
    # end
   end
