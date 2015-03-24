@@ -17,6 +17,7 @@ gem 'rest-client'
 gem 'will_paginate'
 gem 'figaro'
 gem 'devise'
+gem 'markable'
 
 
 group :production do
