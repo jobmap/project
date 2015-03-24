@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150324020601) do
 
   create_table "jobs", force: :cascade do |t|
@@ -38,6 +39,9 @@ ActiveRecord::Schema.define(version: 20150324020601) do
     t.string   "skills_list"
   end
 
+  add_index "jobs", ["al_job_id"], name: "index_jobs_on_al_job_id", unique: true
+  add_index "jobs", ["al_start_id"], name: "index_jobs_on_al_start_id", unique: true
+
   create_table "locations", force: :cascade do |t|
     t.string   "al_url"
     t.string   "display_name"
@@ -51,6 +55,8 @@ ActiveRecord::Schema.define(version: 20150324020601) do
     t.string   "city"
     t.string   "state"
   end
+
+  add_index "locations", ["al_loc_id"], name: "index_locations_on_al_loc_id", unique: true
 
   create_table "startups", force: :cascade do |t|
     t.string   "al_url"
@@ -71,6 +77,8 @@ ActiveRecord::Schema.define(version: 20150324020601) do
     t.datetime "updated_at",        null: false
     t.integer  "al_loc_id"
   end
+
+  add_index "startups", ["al_start_id"], name: "index_startups_on_al_start_id", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -104,5 +112,7 @@ ActiveRecord::Schema.define(version: 20150324020601) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "zillows", ["al_loc_id"], name: "index_zillows_on_al_loc_id", unique: true
 
 end
