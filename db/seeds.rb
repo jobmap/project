@@ -9,7 +9,7 @@ last_page = AngellistApi.get_jobs(options={page: 100000}).last_page
 
 page_num = 1
 
-while page_num <= 3   #last_page
+while page_num <= last_page
   
   angel_jobs = AngellistApi.get_jobs(options={page: page_num})
 
