@@ -2,10 +2,10 @@
 
 one:
   user_id: 
-  favoritied_id: 
-  favoritied_type: Favoritied
+  favorited_id: 
+  favorited_type: Favorited
 
 two:
   user_id: 
-  favoritied_id: 
-  favoritied_type: Favoritied
+  favorited_id: 
+  favorited_type: Favorited
