@@ -7,7 +7,7 @@ class JobsController < ApplicationController
         marker.lat location.latitude
         marker.lng location.longitude
       end
-
+      
     @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6)
     @zillow = @location.zillow
    
