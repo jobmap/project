@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324181610) do
-
-  create_table "favorites", force: :cascade do |t|
-    t.integer  "user_id_id"
-    t.integer  "al_job_id_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "favorites", ["al_job_id_id"], name: "index_favorites_on_al_job_id_id"
-  add_index "favorites", ["user_id_id"], name: "index_favorites_on_user_id_id"
+ActiveRecord::Schema.define(version: 20150324194635) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "al_url"
@@ -66,18 +56,6 @@ ActiveRecord::Schema.define(version: 20150324181610) do
   end
 
   add_index "locations", ["al_loc_id"], name: "index_locations_on_al_loc_id", unique: true
-
-  create_table "marks", id: false, force: :cascade do |t|
-    t.integer  "marker_id"
-    t.string   "marker_type"
-    t.integer  "markable_id"
-    t.string   "markable_type"
-    t.string   "mark",          limit: 128
-    t.datetime "created_at"
-  end
-
-  add_index "marks", ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark"
-  add_index "marks", ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark"
 
   create_table "startups", force: :cascade do |t|
     t.string   "al_url"
