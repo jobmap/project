@@ -16,6 +16,7 @@ gem 'rubillow'
 gem 'rest-client'
 gem 'will_paginate'
 gem 'figaro'
+gem 'devise'
 
 
 group :production do
