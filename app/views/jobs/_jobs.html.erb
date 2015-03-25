@@ -9,13 +9,17 @@
         <li><strong>Salary: </strong>N/A<li>
       <% end %>
       <li>
-        <%= link_to "Details", job.al_url %> | 
-        <%= link_to "Website", job.startup.url, target: "_blank" %> |
-        <%= form_tag(favorites_path) do %>
-          <%= hidden_field_tag(:id, job.id) %>
-          <%= hidden_field_tag(:search, params[:search]) %>
-          <%= submit_tag("Add Favorite") %>
-        <% end %>
+       <%= link_to "Details", job.al_url %> | 
+       <%= link_to "Website", job.startup.url, target: "_blank" %> |
+       <% if current_user.jobs.exists?(al_job_id: job.al_job_id) %>
+         nothing 
+       <% else %>
+         <%= form_tag(favorites_path) do %>
+           <%= hidden_field_tag(:id, job.id) %>
+           <%= hidden_field_tag(:search, params[:search]) %>
+           <%= submit_tag("Add Favorite") %>
+         <% end %>
+       <% end %>
       </li>
     </ul>
   <hr>
