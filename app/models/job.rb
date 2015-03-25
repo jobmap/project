@@ -6,5 +6,6 @@ class Job < ActiveRecord::Base
   belongs_to :startup, foreign_key: 'al_start_id'
 
   validates :al_start_id, uniqueness: true
+  markable_as :favorite
 
 end

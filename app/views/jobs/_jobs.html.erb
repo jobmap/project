@@ -8,7 +8,7 @@
       <% else %>
         <li><strong>Salary: </strong>N/A<li>
       <% end %>
-      <li><%= link_to "Details", job.al_url %> | <%= link_to "Website", job.startup.url, target: "_blank" %></li>
+      <li><%= link_to "Details", job.al_url %> | <%= link_to "Website", job.startup.url, target: "_blank" %> | <%= button_to 'Favorite', current_user.mark_as_favorite([job])  %></li>
     </ul>
   <hr>
 <% end %>
