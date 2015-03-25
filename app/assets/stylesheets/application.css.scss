@@ -17,10 +17,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-form {
-  display: inline-block;
-}
-
 html {
   position: relative;
   min-height: 100%;
@@ -265,6 +261,10 @@ ul li a:hover {
 }
 
 /* Startup Listing */
+
+li form {
+  display: inline-block;
+}
 
 .col-md-8{
   padding-left: 0px;
