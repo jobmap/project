@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150325133004) do
 
   create_table "jobs", force: :cascade do |t|
@@ -38,9 +37,6 @@ ActiveRecord::Schema.define(version: 20150325133004) do
     t.string   "role_name"
     t.string   "skills_list"
   end
-
-  add_index "jobs", ["al_job_id"], name: "index_jobs_on_al_job_id", unique: true
-  add_index "jobs", ["al_start_id"], name: "index_jobs_on_al_start_id", unique: true
 
   create_table "jobs_users", id: false, force: :cascade do |t|
     t.integer  "user_id"
