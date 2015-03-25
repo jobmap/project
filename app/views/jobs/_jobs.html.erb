@@ -8,7 +8,15 @@
       <% else %>
         <li><strong>Salary: </strong>N/A<li>
       <% end %>
-      <li><%= link_to "Details", job.al_url %> | <%= link_to "Website", job.startup.url, target: "_blank" %></li>
+      <li>
+        <%= link_to "Details", job.al_url %> | 
+        <%= link_to "Website", job.startup.url, target: "_blank" %> |
+        <%= form_tag(favorites_path) do %>
+          <%= hidden_field_tag(:id, job.id) %>
+          <%= hidden_field_tag(:search, params[:search]) %>
+          <%= submit_tag("Add Favorite") %>
+        <% end %>
+      </li>
     </ul>
   <hr>
 <% end %>
