@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @favorites = current_user.jobs
+    @favorites = current_user.jobs.paginate(:page => params[:page], :per_page => 6)
   end
 
   def create
