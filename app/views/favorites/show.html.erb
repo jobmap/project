@@ -8,6 +8,14 @@
       <% else %>
         <li><strong>Salary: </strong>N/A<li>
       <% end %>
+      <li>
+        <%= link_to "Details", fav.al_url %> | 
+        <%= link_to "Website", fav.startup.url, target: "_blank" %> |
+        <%= form_tag(favorites_path, method: 'delete') do %>
+          <%= hidden_field_tag(:id, fav.id) %>
+          <%= submit_tag("Delete") %>
+        <% end %>
+      </li>
     </ul>
   <hr>
 <% end %>
