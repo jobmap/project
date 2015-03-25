@@ -17,10 +17,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <%= link_to favorites_path do %>
-                  <span class="glyphicon glyphicon-star"></span> Favorites
-              <% end %>
             <li><%=link_to current_user.email, edit_user_registration_path %></li>
+            <li><%= link_to favorites_path do %>
+                  <span class="glyphicon glyphicon-star"></span> Favorites
+              <% end %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up', new_user_registration_path %></a></li>
