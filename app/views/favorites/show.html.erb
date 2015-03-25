@@ -15,7 +15,9 @@
         <%= link_to "Website", fav.startup.url, target: "_blank" %> |
         <%= form_tag(favorites_path, method: 'delete') do %>
           <%= hidden_field_tag(:id, fav.id) %>
-          <%= submit_tag("Remove") %>
+          <%= button_tag(type: 'Delete', class: "btn btn-danger") do %>
+                  <span><i class="fa fa-times"></i></span> 
+                <% end %>
         <% end %>
       </li>
     </ul>
