@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_and_belongs_to_many :jobs, foreign_key: 'al_job_id'
+  has_and_belongs_to_many :jobs, association_foreign_key: 'al_job_id'
 end
