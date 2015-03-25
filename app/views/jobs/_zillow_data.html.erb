@@ -9,7 +9,7 @@
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <ul class="list-group">
-          <li><strong>Medium Household income:</strong> $<%= number_with_delimiter(@zillow.med_house_income, delimiter: ',') %></li> 
+          <li><strong>Median Household income:</strong> $<%= number_with_delimiter(@zillow.med_house_income, delimiter: ',') %></li> 
           <li class="nat-avg" style="
     font-size: .9em;">(National average $<%= number_with_delimiter(@zillow.med_nat_house_income, delimiter: ',') %>)</li>
           <li><strong>Home Value Index:</strong> $<%= number_with_delimiter(@zillow.zillow_HVI, delimiter: ',') %></li>
