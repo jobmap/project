@@ -75,11 +75,11 @@ ul li a:hover {
 
 .navbar-default .navbar-brand {
   font-size: 1.8em;
-  color: #FFFFFF;
+  color: #EDEEEF;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #FFFFFF;
+  color: #F2F2F2;
   font-size: 1.1em;
 }
 
@@ -101,7 +101,7 @@ ul li a:hover {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFFFFF;
+  background-color: #EDEEEF;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -179,7 +179,7 @@ ul li a:hover {
 }
 
 .homepage p {
-  font-size: 21px;
+  font-size: 1.5em;
   font-weight: 300
 }
 
@@ -315,6 +315,7 @@ a.thumbnail:hover {
 /* footer */
 footer {
     position: absolute;
+    font-size: 1.2em;
     left: 0;
     bottom: 0;
     height: 100px;
