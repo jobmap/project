@@ -30,6 +30,6 @@
     <%= link_to "Back", :back %>
   </div>
 
-  <%= will_paginate @favorites %>
+  <%= will_paginate @favorites, renderer: BootstrapPagination::Rails %>
 
 </div>
