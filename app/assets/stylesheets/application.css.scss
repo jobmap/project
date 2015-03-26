@@ -262,6 +262,21 @@ ul li a:hover {
 
 /* Startup Listing */
 
+.fa-star:before {
+  content: "\f005";
+  color: #E38635;
+}
+
+.startup-list .btn-default {
+  color: #6B6B6B;
+  background-color: #F9F9FA;
+  border: none;
+  font-size: 1.2em;
+  padding: 0;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
 li form {
   display: inline-block;
 }
@@ -321,6 +336,85 @@ a.thumbnail:hover {
   
 }
 
+/* Favorite list */
+
+.favorite-title {
+  margin-bottom: 35px;
+  color: #4A4A4B;
+}
+
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px;
+  padding: 5px; 
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: rgba(31, 137, 202, 0.92);
+  border: #7b8189;
+  margin-top: -4px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  background-color: #002A59;
+}
+
+/* Pagination */
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #E07517;
+  border-color: #EBA466;
+  cursor: default;
+}
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+  color: #002A59;
+  background-color: #eeeeee;
+  border-color: #ddd;
+}
+
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #002A59;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+
+.back .btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  background-color: #E59147;
+}
+
+/* Alerts */
+
+.alert-alert {
+  background-color: #FF7C7C;
+  border-color: #FA6161;
+  color: #FFDCDC;
+  margin-top: 20px;
+}
+
+.alert-error {
+  background-color: #FF7C7C;
+  border-color: #FA6161;
+  color: #FFDCDC;
+  margin-top: 20px;
+}
+
 
 /* footer */
 footer {
@@ -364,6 +458,11 @@ footer {
 }
 
 .h1-title {
+  font-size: 3em;
+  text-align: center;
+}
+
+.favorite-title {
   font-size: 3em;
   text-align: center;
 }

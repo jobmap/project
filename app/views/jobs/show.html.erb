@@ -11,7 +11,7 @@
   <div class="col-md-8">
     <%= render 'jobs' %>
 
-    <%= will_paginate @jobs %>
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 
   </div>
 </div>

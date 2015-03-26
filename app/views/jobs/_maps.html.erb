@@ -1,7 +1,7 @@
 <div id="map" class="map_container">
   <script>
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {maxZoom: 12}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {maxZoom: 10}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
@@ -12,6 +12,6 @@
 <div class="pull-right">
   <div class="input-group input-group-md">
     <%= text_field_tag :search, params[:search].downcase, placeholder: "search by city", class: "form-control" %>
-      <span class="input-group-btn"><%= submit_tag "Change location", name: nil, class: "btn btn-default" %></span>
+      <span class="input-group-btn"><%= submit_tag "Search", name: nil, class: "btn btn-default" %></span>
     <% end %>
   </div>
