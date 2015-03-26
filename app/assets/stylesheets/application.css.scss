@@ -343,15 +343,21 @@ a.thumbnail:hover {
   color: #4A4A4B;
 }
 
-.startup-list .btn-danger {
-  color: #A55252;
-  background-color: #F9F9FA;
-  border: none;
-  font-size: 1.2em;
-  padding: 0;
-  margin-left: 2px;
-  margin-bottom: 0px;
+.btn-sm, .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: rgba(227, 132, 48, 0.92);
+  border: rgb(123, 129, 137);
   margin-top: -1px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+  background-color: #002A59;
 }
 
 /* Pagination */
@@ -380,6 +386,29 @@ a.thumbnail:hover {
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
+}
+
+/* Alerts */
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  margin-top: 20px;
+}
+
+.alert-alert {
+  background-color: #FF7C7C;
+  border-color: #FA6161;
+  color: #FFDCDC;
+  margin-top: 20px;
+}
+
+.alert-error {
+  background-color: #FF7C7C;
+  border-color: #FA6161;
+  color: #FFDCDC;
+  margin-top: 20px;
 }
 
 

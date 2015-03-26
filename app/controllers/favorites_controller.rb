@@ -18,7 +18,7 @@ class FavoritesController < ApplicationController
     @favorites = current_user.jobs
     @job = Job.find(params[:id])
     @favorites.destroy(@job)
-    redirect_to favorites_url, notice: 'Project is no longer in favorites'
+    redirect_to favorites_url, notice: 'Job has been removed from your favorites list.'
   end
 
 
