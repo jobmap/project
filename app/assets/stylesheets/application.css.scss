@@ -277,16 +277,6 @@ ul li a:hover {
   margin-top: 2px;
 }
 
-.startup-list .btn-danger {
-  color: #9D3333;
-  background-color: #F9F9FA;
-  border: none;
-  font-size: 1.2em;
-  padding: 0;
-  margin-left: 2px;
-  margin-bottom: 3px;
-}
-
 li form {
   display: inline-block;
 }
@@ -346,6 +336,24 @@ a.thumbnail:hover {
   
 }
 
+/* Favorite list */
+
+.favorite-title {
+  margin-bottom: 35px;
+  color: #4A4A4B;
+}
+
+.startup-list .btn-danger {
+  color: #A55252;
+  background-color: #F9F9FA;
+  border: none;
+  font-size: 1.2em;
+  padding: 0;
+  margin-left: 2px;
+  margin-bottom: 0px;
+  margin-top: -1px;
+}
+
 
 /* footer */
 footer {
@@ -389,6 +397,11 @@ footer {
 }
 
 .h1-title {
+  font-size: 3em;
+  text-align: center;
+}
+
+.favorite-title {
   font-size: 3em;
   text-align: center;
 }
