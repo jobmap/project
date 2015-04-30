@@ -2,21 +2,19 @@ class JobsController < ApplicationController
 
   def show
     @location = Location.find_by(address: params[:search].downcase)
-    # @locations = Location.near(params[:search], 5)
       @hash = Gmaps4rails.build_markers(@location) do |location, marker|
         marker.lat location.latitude
         marker.lng location.longitude
       end
 
-    @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6)
-    @zillow = @location.zillow
+    if @location 
+      @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6) 
+      @zillow = @location.zillow
+    else
+      flash[:notice] = "Sorry, but no Startups were found. Please try your search again."
+      redirect_to(:back)
+    end
    
-   # if @location.empty?
-   #   flash[:notice] = "No matches found. Please try again."
-   #   redirect_to "/"
-   # elsif @location.nil?
-   #   flash[:notice] = "No matches found. Please try again." 
-   #   redirect_to "/"
-   # end
   end
+
 end
