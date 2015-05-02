@@ -11,7 +11,7 @@ class JobsController < ApplicationController
       @jobs = @location.jobs.paginate(:page => params[:page], :per_page => 6) 
       @zillow = @location.zillow
     else
-      flash[:notice] = "Sorry, but no Startups were found. Please try your search again."
+      flash[:notice] = "No Startups were found in #{params[:search]}. Please try your search again."
       redirect_to(:back)
     end
    
