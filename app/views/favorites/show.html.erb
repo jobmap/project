@@ -27,7 +27,7 @@
   <% end %>
 
   <div class="back">
-    <%= link_to "Back", :back, class: "btn btn-default" %>
+    <%= link_to "Back", url_for(:back), class: "btn btn-default" %>
   </div>
 
   <%= will_paginate @favorites, renderer: BootstrapPagination::Rails %>

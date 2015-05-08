@@ -1,9 +1,9 @@
 
 # delete all 
-Job.delete_all
-Startup.delete_all
-Location.delete_all
-Zillow.delete_all
+# Job.delete_all
+# Startup.delete_all
+# Location.delete_all
+# Zillow.delete_all
 
 last_page = AngellistApi.get_jobs(options={page: 100000}).last_page
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325133004) do
+ActiveRecord::Schema.define(version: 20150508003231) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "al_url"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150325133004) do
     t.string   "equity_max"
     t.string   "equity_min"
     t.string   "equity_vest"
-    t.integer  "al_job_id"
+    t.integer  "al_job_id",              limit: 8
     t.string   "job_type"
     t.boolean  "remote_ok"
     t.integer  "salary_max"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150325133004) do
     t.integer  "al_loc_id"
     t.string   "title"
     t.datetime "al_updated_at"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "role_name"
     t.string   "skills_list"
   end
@@ -58,18 +58,6 @@ ActiveRecord::Schema.define(version: 20150325133004) do
     t.string   "city"
     t.string   "state"
   end
-
-  create_table "marks", id: false, force: :cascade do |t|
-    t.integer  "marker_id"
-    t.string   "marker_type"
-    t.integer  "markable_id"
-    t.string   "markable_type"
-    t.string   "mark",          limit: 128
-    t.datetime "created_at"
-  end
-
-  add_index "marks", ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark"
-  add_index "marks", ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark"
 
   create_table "startups", force: :cascade do |t|
     t.string   "al_url"
